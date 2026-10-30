@@ -5,6 +5,8 @@
 @media(prefers-color-scheme:dark){:root{--p:#B0C6FF;--op:#162E60;--pc:#2F4578;--opc:#D9E2FF;--sc:#404659;--osc:#DCE2F9;--tc:#5B3D5E;--otc:#FBD7FC;--s:#121318;--s1:#1A1B20;--s2:#1E1F25;--s3:#292A2F;--s4:#33343A;--os:#E3E2E9;--osv:#C5C6D0;--o:#8E9099;--er:#FFB4AB;--ec:#93000A;--inv:#E3E2E9;--oinv:#2F3036}}
 *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--s);color:var(--os);padding:72px 0 100px}
 header{position:fixed;inset:0 0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 20px;background:var(--s);z-index:5}header b{font-size:22px;font-weight:600;letter-spacing:-.3px}
+#credit{font-size:12px;text-align:right;align-items:right;color:#475D92;}
+#credit a{font-size:12px;text-align:left;color:#475D92;}
 #sv{font-size:12px;padding:6px 14px;border-radius:999px;background:var(--s3);color:var(--osv)}
 nav{position:fixed;inset:auto 0 0;display:flex;background:var(--s2);padding:10px 4px 14px;z-index:5}
 nav button{flex:1;flex-direction:column;gap:4px;background:none;color:var(--osv);min-height:0;padding:0;font-size:11px;border-radius:0}nav button i{width:56px;height:32px;border-radius:16px;display:grid;place-items:center;transition:background .25s,width .35s var(--sp)}
@@ -33,7 +35,7 @@ input[type=checkbox],input[type=radio]{width:auto;min-height:0;accent-color:var(
 .tbl{display:none;overflow:auto;padding:0;border-radius:28px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px 8px;text-align:right;border-bottom:1px solid var(--s4);white-space:nowrap}th{background:var(--s3);font-size:11px;position:sticky;top:0}.tl{text-align:left;white-space:normal;min-width:260px}tr[data-d]{cursor:pointer}tr[data-d]:hover td{background:var(--s2)}
 @media(min-width:900px){body{padding:72px 0 40px 104px}nav{inset:64px auto 0 0;width:96px;flex-direction:column;gap:14px;padding:16px 0;background:var(--s)}nav button{flex:none}.tbl{display:block}.cards{display:none}.fab{bottom:24px;right:24px}#toast{left:120px;bottom:24px}#sheet>div{margin:5vh auto;border-radius:28px;min-height:0}}
 </style></head><body>
-<header><b>TA/DA Claim</b><span id=sv>Loading…</span></header><nav id=nav></nav><main id=app></main><div id=sheet hidden></div><div id=toast></div>
+<header><b>TA/DA Reimbursement Sheet Teamlease</b><span id="credit">Made by <a href="https://www.instagram.com/itspdp">Pranay</a></span><span id=sv>Loading…</span></header><nav id=nav></nav><main id=app></main><div id=sheet hidden></div><div id=toast></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
@@ -99,7 +101,7 @@ const SAMPLE=`1|09:00|18:00|192|||150||Betul Market>Chhindwara Market>Amla Marke
 31|07:30|18:00|198|||150||Amla>Narmadapuram (Shilpkaar Sangam)>Amla`;
 const sampleB=()=>{const n=v=>v===''?null:+v,es=SAMPLE.split('\n').map(r=>{const[d,f,t,km,cv,lg,fo,st,pl]=r.split('|'),dd='2026-10-'+d.padStart(2,'0');
  return{id:'sample-'+dd,date:dd,from:f,to:t,km:n(km),rateOv:null,fareOv:null,conv:n(cv),lodg:n(lg),fws:null,fwo:n(fo),board:null,mob:null,places:pl?pl.split('>').map(s=>{const m=/^(.*?)\s*\((.*)\)$/.exec(s.trim());return m?{p:m[1],ev:m[2]}:{p:s.trim(),ev:''}}):[],status:st||'Working',remarks:'',cf:{}}});
- const s=defS();Object.assign(s.profile,{code:'3374778',name:'TOOSHIF KHAN',dept:'RETAIL SERVICE',email:'toshifkhan7878@gmail.com',loc:'NARMADAPURAM',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. MUKESH RAJAK'});
+ const s=defS();Object.assign(s.profile,{code:'3374778',name:'PRANAY DEEP',dept:'RETAIL SERVICE',email:'dummy@gmail.com',loc:'BETUL',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. PDP'});
  s.places=[...new Set([...s.places,...es.flatMap(e=>e.places.map(x=>x.p))])];s.events=['Shilpkaar Sangam'];
  return{app:'tada-claim',schema:2,created:'2026-10-30T00:00:00.000Z',sample:true,settings:s,claims:[{id:'2026-10',year:2026,month:10,created:'2026-10-30T00:00:00.000Z',entries:es}]}};
 </script>
