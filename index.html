@@ -101,7 +101,7 @@ const SAMPLE=`1|09:00|18:00|192|||150||Betul Market>Chhindwara Market>Amla Marke
 31|07:30|18:00|198|||150||Amla>Narmadapuram (Shilpkaar Sangam)>Amla`;
 const sampleB=()=>{const n=v=>v===''?null:+v,es=SAMPLE.split('\n').map(r=>{const[d,f,t,km,cv,lg,fo,st,pl]=r.split('|'),dd='2026-10-'+d.padStart(2,'0');
  return{id:'sample-'+dd,date:dd,from:f,to:t,km:n(km),rateOv:null,fareOv:null,conv:n(cv),lodg:n(lg),fws:null,fwo:n(fo),board:null,mob:null,places:pl?pl.split('>').map(s=>{const m=/^(.*?)\s*\((.*)\)$/.exec(s.trim());return m?{p:m[1],ev:m[2]}:{p:s.trim(),ev:''}}):[],status:st||'Working',remarks:'',cf:{}}});
- const s=defS();Object.assign(s.profile,{code:'3374778',name:'PRANAY DEEP',dept:'RETAIL SERVICE',email:'dummy@gmail.com',loc:'BETUL',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. PDP'});
+ const s=defS();Object.assign(s.profile,{code:'ABC#314',name:'PRANAY DEEP',dept:'RETAIL SERVICE',email:'dummy@gmail.com',loc:'BETUL',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. PDP'});
  s.places=[...new Set([...s.places,...es.flatMap(e=>e.places.map(x=>x.p))])];s.events=['Shilpkaar Sangam'];
  return{app:'tada-claim',schema:2,created:'2026-10-30T00:00:00.000Z',sample:true,settings:s,claims:[{id:'2026-10',year:2026,month:10,created:'2026-10-30T00:00:00.000Z',entries:es}]}};
 </script>
