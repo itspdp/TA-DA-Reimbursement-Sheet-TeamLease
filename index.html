@@ -1,0 +1,290 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>TA/DA Claim</title>
+<link rel=preconnect href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400..800&display=swap" rel=stylesheet>
+<style>
+:root{--p:#475D92;--op:#fff;--pc:#D9E2FF;--opc:#001A43;--sc:#DCE2F9;--osc:#141B2C;--tc:#FBD7FC;--otc:#29132D;--s:#FAF8FF;--s1:#F4F3FA;--s2:#EEEDF4;--s3:#E8E7EF;--s4:#E2E2E9;--os:#1A1B20;--osv:#44464F;--o:#757780;--er:#BA1A1A;--ec:#FFDAD6;--inv:#2F3036;--oinv:#F1F0F7;--sp:cubic-bezier(.34,1.56,.64,1);color-scheme:light dark;font:15px/1.45 "Roboto Flex",Roboto,system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root{--p:#B0C6FF;--op:#162E60;--pc:#2F4578;--opc:#D9E2FF;--sc:#404659;--osc:#DCE2F9;--tc:#5B3D5E;--otc:#FBD7FC;--s:#121318;--s1:#1A1B20;--s2:#1E1F25;--s3:#292A2F;--s4:#33343A;--os:#E3E2E9;--osv:#C5C6D0;--o:#8E9099;--er:#FFB4AB;--ec:#93000A;--inv:#E3E2E9;--oinv:#2F3036}}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--s);color:var(--os);padding:72px 0 100px}
+header{position:fixed;inset:0 0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 20px;background:var(--s);z-index:5}header b{font-size:22px;font-weight:600;letter-spacing:-.3px}
+#sv{font-size:12px;padding:6px 14px;border-radius:999px;background:var(--s3);color:var(--osv)}
+nav{position:fixed;inset:auto 0 0;display:flex;background:var(--s2);padding:10px 4px 14px;z-index:5}
+nav button{flex:1;flex-direction:column;gap:4px;background:none;color:var(--osv);min-height:0;padding:0;font-size:11px;border-radius:0}nav button i{width:56px;height:32px;border-radius:16px;display:grid;place-items:center;transition:background .25s,width .35s var(--sp)}
+nav button.on{color:var(--os);font-weight:700}nav button.on i{background:var(--sc);color:var(--osc);width:68px}nav button:active{transform:none;border-radius:0}
+main{max-width:1180px;margin:auto;padding:8px 16px}.card{background:var(--s1);border-radius:28px;padding:20px;margin:0 0 12px}
+.hero{background:var(--pc);color:var(--opc);border-radius:44px 44px 44px 12px;padding:24px 28px}.disp{font-size:46px;line-height:1.05;font-weight:750;letter-spacing:-1.5px;margin:6px 0}
+h3,h4{font-weight:550;margin:0 0 8px}small{color:var(--osv)}.hero small{color:inherit;opacity:.8}
+button{font:inherit;min-height:48px;padding:0 24px;border-radius:999px;border:0;background:var(--sc);color:var(--osc);font-weight:550;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:border-radius .2s,transform .3s var(--sp),background .2s}
+button:active{border-radius:14px;transform:scale(.96)}button.p{background:var(--p);color:var(--op)}button.d{background:var(--ec);color:var(--er)}button.ib{width:48px;padding:0;flex:none}button.sm{min-height:32px;padding:0 12px;border-radius:12px;font-size:13px}
+.row{display:flex;gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}.row>.f,.row>input{flex:1;margin:0;min-width:0}.g{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+input,select{font:inherit;color:inherit;width:100%;min-height:48px;padding:10px 16px;border:0;border-radius:16px;background:var(--s3);outline:0}input:focus,select:focus{box-shadow:inset 0 0 0 2px var(--p)}
+.f{display:flex;flex-direction:column;background:var(--s3);border-radius:16px 16px 4px 4px;padding:8px 16px 2px;margin:0 0 10px;border-bottom:2px solid var(--o);transition:.2s}.f:focus-within{border-color:var(--p);background:var(--s4);border-radius:16px}
+.f label{display:block;font-size:12px;color:var(--osv)}.f:focus-within label{color:var(--p)}.f input,.f select{background:none;border-radius:0;min-height:34px;padding:2px 0 6px;box-shadow:none;margin-top:auto}
+input[type=checkbox],input[type=radio]{width:auto;min-height:0;accent-color:var(--p)}.ck{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;color:var(--os)}.ck input{order:2;flex:none}
+.sw{appearance:none;width:52px!important;height:32px;border-radius:16px;background:var(--s4)!important;box-shadow:inset 0 0 0 2px var(--o);position:relative;cursor:pointer;transition:.25s}.sw::after{content:'';position:absolute;top:8px;left:8px;width:16px;height:16px;border-radius:50%;background:var(--o);transition:.3s var(--sp)}
+.sw:checked{background:var(--p)!important;box-shadow:none}.sw:checked::after{left:24px;top:4px;width:24px;height:24px;background:var(--op)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}.chip{min-height:40px;padding:0 16px;border-radius:12px;background:none;border:1px solid var(--o);color:var(--osv)}.chip.on{background:var(--sc);color:var(--osc);border-color:transparent}
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}.stop{background:var(--tc);color:var(--otc);border-radius:22px;padding:10px 10px 8px 16px;display:flex;flex-direction:column;gap:6px}.stop select{background:none;box-shadow:inset 0 0 0 1px currentColor;min-height:32px;padding:0 8px;font-size:12px;border-radius:10px}.stop .row{margin:0;gap:4px}.stop button{background:#fff4;color:inherit}
+.arr{font-size:24px;color:var(--p);font-weight:700}.list{display:flex;flex-direction:column;gap:2px}
+.day{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 20px;background:var(--s1);border-radius:8px;cursor:pointer;transition:border-radius .25s,background .2s}.day:first-child{border-radius:28px 28px 8px 8px}.day:last-child{border-radius:8px 8px 28px 28px}.day:active{border-radius:22px}
+.day.e{background:var(--s3)}.day.su{background:color-mix(in srgb,var(--er) 14%,var(--s1))}.day b{font-weight:650}.day em{font-style:normal;font-weight:700;color:var(--p)}
+.fab{position:fixed;right:16px;bottom:100px;z-index:6;min-height:64px;padding:0 24px 0 20px;border-radius:22px;background:var(--pc);color:var(--opc);font-size:16px;font-weight:650;box-shadow:0 4px 12px #0003}
+#sheet{position:fixed;inset:0;background:#0007;z-index:10;overflow:auto}#sheet>div{background:var(--s1);max-width:640px;margin:36px auto 0;border-radius:28px 28px 0 0;padding:12px 20px 28px;min-height:calc(100% - 36px)}#sheet>div::before{content:'';display:block;width:32px;height:4px;border-radius:2px;background:var(--o);margin:0 auto 12px}
+#cb{background:var(--pc);color:var(--opc);border-radius:20px;padding:14px 18px;margin:4px 0 12px}.er{color:var(--er);font-size:13px}
+#toast{position:fixed;left:16px;right:16px;bottom:104px;max-width:560px;margin:auto;background:var(--inv);color:var(--oinv);padding:14px 20px;border-radius:16px;z-index:20;display:none;font-size:14px}
+.tbl{display:none;overflow:auto;padding:0;border-radius:28px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px 8px;text-align:right;border-bottom:1px solid var(--s4);white-space:nowrap}th{background:var(--s3);font-size:11px;position:sticky;top:0}.tl{text-align:left;white-space:normal;min-width:260px}tr[data-d]{cursor:pointer}tr[data-d]:hover td{background:var(--s2)}
+@media(min-width:900px){body{padding:72px 0 40px 104px}nav{inset:64px auto 0 0;width:96px;flex-direction:column;gap:14px;padding:16px 0;background:var(--s)}nav button{flex:none}.tbl{display:block}.cards{display:none}.fab{bottom:24px;right:24px}#toast{left:120px;bottom:24px}#sheet>div{margin:5vh auto;border-radius:28px;min-height:0}}
+</style></head><body>
+<header><b>TA/DA Claim</b><span id=sv>Loading…</span></header><nav id=nav></nav><main id=app></main><div id=sheet hidden></div><div id=toast></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script id=calc>
+// ---- Pure logic shared by UI, PDF, Excel and tests ----
+let S;
+const R2=x=>Math.round((+x+Number.EPSILON)*100)/100,has=v=>v!=null&&v!=='',num=v=>has(v)?+v:0;
+const tmin=t=>{const m=/^(\d{1,2}):(\d{2})$/.exec(t||'');return m&&+m[1]<24&&+m[2]<60?+m[1]*60+ +m[2]:null};
+const mins=(a,b,on=true)=>{a=tmin(a);b=tmin(b);if(a==null||b==null)return null;return b>=a?b-a:on?b+1440-a:null};
+const hhmm=m=>m==null?'':String(m/60|0).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+const CATS=['conv','lodg','fws','fwo','board','mob'];
+const fare=e=>has(e.fareOv)?R2(e.fareOv):R2(num(e.km)*(has(e.rateOv)?+e.rateOv:S.rate));
+const total=e=>R2(fare(e)+CATS.reduce((s,k)=>s+num(e[k]),0));
+const tot=es=>{const t={km:0,fare:0,conv:0,lodg:0,fws:0,fwo:0,board:0,mob:0,all:0};es.forEach(e=>{t.km+=num(e.km);t.fare+=fare(e);CATS.forEach(k=>t[k]+=num(e[k]));t.all+=total(e)});for(const k in t)t[k]=R2(t[k]);return t};
+const inr=n=>new Intl.NumberFormat('en-IN',{maximumFractionDigits:2}).format(n);
+const LO='zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split(' '),TN='_ _ twenty thirty forty fifty sixty seventy eighty ninety'.split(' ');
+const w99=n=>n<20?LO[n]:TN[n/10|0]+(n%10?'-'+LO[n%10]:''),w999=n=>[n>99&&LO[n/100|0]+' hundred',n%100&&w99(n%100)].filter(Boolean).join(' ');
+function words(a){a=+a;if(!isFinite(a)||a<0||a>=1e10)return'';const p=Math.round(a*100),r=Math.floor(p/100),ps=p%100;
+ const c=Math.floor(r/1e7),l=Math.floor(r/1e5)%100,t=Math.floor(r/1e3)%100,h=r%1000;
+ const s=[c&&w999(c)+' crore',l&&w99(l)+' lakh',t&&w99(t)+' thousand',h&&w999(h)].filter(Boolean).join(' ')||'zero';
+ return s[0].toUpperCase()+s.slice(1)+' Indian rupees'+(ps?' and '+w99(ps)+' paise':'')+' only.'}
+// route text: "Place (event) → Place → Place"; falls back to status (Sunday/Holiday/Leave) when no places
+const stopT=(e,arrow,rem)=>[e.places.length?e.places.map(s=>s.p+(s.ev?' ('+s.ev+')':'')).join(arrow):(e.status&&e.status!=='Working'?e.status:''),rem&&e.remarks?'- '+e.remarks:''].filter(Boolean).join(' ');
+const normE=e=>{e.places=(Array.isArray(e.places)?e.places:[]).map(s=>typeof s==='string'?{p:s,ev:''}:{p:String(s&&s.p||''),ev:String(s&&s.ev||'')}).filter(s=>s.p);if(e.event)e.remarks=[e.remarks,'Event: '+e.event].filter(Boolean).join('; ');delete e.event;e.cf=e.cf&&typeof e.cf==='object'?e.cf:{};return e};
+const mig=b=>{if(b&&b.schema===1&&Array.isArray(b.claims)){b.claims.forEach(c=>Array.isArray(c.entries)&&c.entries.forEach(normE));b.schema=2}return b};
+const defS=()=>({profile:{org:'Teamlease Services Limited',code:'',name:'',dept:'',email:'',loc:'',depot:'',region:'',approver:'',disc:'This is Strictly for Internal Circulation and should not be shared with anyone outside UTCL.'},rate:6,allowOv:true,overnight:true,sunPre:true,
+ places:['Amla Market','Betul Market','Chhindwara Market','Seoni Local Market','Multai','Balaghat'],events:[],routes:['Chhindwara, Seoni, Amla'],statuses:['Working','Sunday','Holiday','Leave'],custom:[],exportCustom:false,exportExtra:false});
+const cleanS=s=>{const d=defS(),o={...d,...s,profile:{}};for(const k in d.profile)o.profile[k]=String((s&&s.profile&&s.profile[k])??d.profile[k]);
+ for(const k of['places','events','routes','statuses'])o[k]=(Array.isArray(o[k])?o[k]:d[k]).map(String).filter(Boolean);
+ const T=['text','number','date','time','select','multi','currency','bool'];o.custom=(Array.isArray(o.custom)?o.custom:[]).map((c,i)=>({id:/^[\w-]{1,40}$/.test(c&&c.id)?c.id:'cf'+i+Math.random().toString(36).slice(2,6),label:String(c&&c.label||'Field'),type:T.includes(c&&c.type)?c.type:'text',def:String((c&&c.def)??''),opts:String((c&&c.opts)??''),req:!!(c&&c.req)}));
+ o.rate=+o.rate>=0?+o.rate:6;for(const k of['allowOv','overnight','sunPre','exportCustom','exportExtra'])o[k]=!!o[k];return o};
+// Pre-saved claim transcribed from the Oct 2026 PDF: day|from|to|km|conv|lodging|food(without)|status|places (">" separates places, "(x)" = event)
+const SAMPLE=`1|09:00|18:00|192|||150||Betul Market>Chhindwara Market>Amla Market
+2|||||||Holiday|
+3|09:00|18:00|65|||150||Amla>Betul Market>Amla
+4|||||||Sunday|
+5|06:30|18:00|188||1000|150||Amla>Seoni Local Market
+6|10:00|19:00|155||1000|150||Seoni>Chhapara>Palari>Seoni
+7|09:00|18:00|142||1000|150||Seoni>Kurai>Seoni>Keolari>Seoni
+8|09:00|18:00|165||1000|150||Seoni>Balaghat Saletekha Market>Balaghat
+9|08:00|18:00|115||1000|150||Balaghat>Waraseoni>Dongarmali>Balaghat Local Market
+10|09:00|19:00|134||1000|150||Balaghat>Tirodi>Katangi>Balaghat
+11|10:30|18:00|172||1000|150||Balaghat>Chhindwara Market
+12|09:00|18:00|186|||150||Chhindwara>Shapur Chopna>Amla Market
+13|10:00|19:00|98|||150||Amla>Bisnoor>Athner>Amla
+14|07:00|18:00|188|||150||Amla>Chicoli>Damjipura>Amla Market
+15|||||||Leave|
+16|||||||Leave|
+17|09:00|18:00|192|||150||Amla>Multai>Chhindwara>Amla
+18|||||||Sunday|
+19|08:00|18:00|198|||150||Amla>Pandhruna>Chhindwara
+20|||||||Holiday|
+21|10:30|18:00|75||1000|150||Chhindwara>Seoni Market
+22|||15||1000|||Seoni Local Market
+23|10:00|18:00|148||1000|150||Seoni>Chappara>Seoni
+24|09:00|18:00|110||1000|150||Seoni>Khurai>Keolari>Seoni
+25|10:30|18:00|95||1000|150||Seoni>Chhindwara Market
+26|10:30|18:00||260|1000|150||Chhindwara Market>Seoni
+27|10:30|18:00||260|1000|150||Seoni>Balaghat (Shilpkaar Sangam)>Seoni
+28||||||||Seoni Local Market (Shilpkaar Sangam)
+29|||68|||150||Amla>Betul Market (Shilpkaar Sangam)>Amla
+30|07:00||192|||150||Multai>Chhindwara (Shilpkaar Sangam)>Betul
+31|07:30|18:00|198|||150||Amla>Narmadapuram (Shilpkaar Sangam)>Amla`;
+const sampleB=()=>{const n=v=>v===''?null:+v,es=SAMPLE.split('\n').map(r=>{const[d,f,t,km,cv,lg,fo,st,pl]=r.split('|'),dd='2026-10-'+d.padStart(2,'0');
+ return{id:'sample-'+dd,date:dd,from:f,to:t,km:n(km),rateOv:null,fareOv:null,conv:n(cv),lodg:n(lg),fws:null,fwo:n(fo),board:null,mob:null,places:pl?pl.split('>').map(s=>{const m=/^(.*?)\s*\((.*)\)$/.exec(s.trim());return m?{p:m[1],ev:m[2]}:{p:s.trim(),ev:''}}):[],status:st||'Working',remarks:'',cf:{}}});
+ const s=defS();Object.assign(s.profile,{code:'3374778',name:'TOOSHIF KHAN',dept:'RETAIL SERVICE',email:'toshifkhan7878@gmail.com',loc:'NARMADAPURAM',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. MUKESH RAJAK'});
+ s.places=[...new Set([...s.places,...es.flatMap(e=>e.places.map(x=>x.p))])];s.events=['Shilpkaar Sangam'];
+ return{app:'tada-claim',schema:2,created:'2026-10-30T00:00:00.000Z',sample:true,settings:s,claims:[{id:'2026-10',year:2026,month:10,created:'2026-10-30T00:00:00.000Z',entries:es}]}};
+</script>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MN='January February March April May June July August September October November December'.split(' '),WD='Sun Mon Tue Wed Thu Fri Sat'.split(' ');
+const ym=(y,m)=>y+'-'+String(m).padStart(2,'0'),dstr=(y,m,d)=>ym(y,m)+'-'+String(d).padStart(2,'0'),dmy=s=>s.split('-').reverse().join('-'),dim=(y,m)=>new Date(y,m,0).getDate(),dow=s=>new Date(s+'T00:00:00Z').getUTCDay();
+const shift=(d,n)=>new Date(Date.UTC(+d.slice(0,4),+d.slice(5,7)-1,+d.slice(8))+n*864e5).toISOString().slice(0,10);
+const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2);
+let C,E=null,dirty=false,tab='claim',pend=null,pq='',saveT;
+const IC={claim:'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',daily:'M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z',summary:'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z',
+ setup:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ backup:'M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z',export:'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z',add:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',close:'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',prev:'M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z',next:'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'};
+const ic=n=>`<svg width=24 height=24 viewBox="0 0 24 24" fill=currentColor aria-hidden=true><path d="${IC[n]}"/></svg>`;
+const TABS=[['claim','Claim'],['daily','Daily'],['summary','Summary'],['setup','Setup'],['backup','Backup'],['export','Export']];
+// ---- IndexedDB ----
+const db=new Promise((ok,no)=>{const r=indexedDB.open('tada',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)});
+const tx=async(m,f)=>{const d=await db;return new Promise((ok,no)=>{const t=d.transaction('kv',m),q=f(t.objectStore('kv'));t.oncomplete=()=>ok(q&&q.result);t.onerror=t.onabort=()=>no(t.error)})};
+const kget=k=>tx('readonly',s=>s.get(k)),kset=(k,v)=>tx('readwrite',s=>s.put(v,k)),kdel=k=>tx('readwrite',s=>s.delete(k)),kall=()=>tx('readonly',s=>s.getAllKeys());
+const stat=s=>$('#sv').textContent=s;
+const toast=(m,bad)=>{const t=$('#toast');t.textContent=m;t.style.background=bad?'var(--er)':'';t.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.display='none',3500)};
+function saveS(){clearTimeout(saveT);stat('Saving…');saveT=setTimeout(async()=>{try{await kset('settings',S);stat('Saved ✓')}catch(x){stat('Save failed');toast('Could not save settings: '+x.message,1)}},300)}
+async function persistC(){stat('Saving…');try{C.updated=new Date().toISOString();await kset('claim:'+C.id,C);await kset('current',C.id);stat('Saved ✓');return true}catch(x){stat('Save failed');toast('Could not save: '+x.message,1);return false}}
+const days=()=>Array.from({length:dim(C.year,C.month)},(_,i)=>dstr(C.year,C.month,i+1));
+const blank=d=>{const e={id:uid(),date:d,from:'',to:'',km:null,rateOv:null,fareOv:null,conv:null,lodg:null,fws:null,fwo:null,board:null,mob:null,places:[],status:'Working',remarks:'',cf:{}};
+ S.custom.forEach(c=>e.cf[c.id]=c.type==='bool'?/^(1|true|yes)$/i.test(c.def):c.type==='multi'?(c.def?c.def.split(','):[]):c.def);return e};
+const sundays=()=>{let n=0;days().forEach(d=>{if(dow(d)==0&&!C.entries.some(e=>e.date===d)){C.entries.push({...blank(d),status:'Sunday'});n++}});C.entries.sort((a,b)=>a.date<b.date?-1:1);return n};
+async function openC(y,m){C=await kget('claim:'+ym(y,m));if(C)C.entries.forEach(normE);else{C={id:ym(y,m),year:y,month:m,created:new Date().toISOString(),entries:[]};if(S.sunPre)sundays()}await persistC()}
+const fv=e=>has(e.km)||has(e.fareOv)?fare(e):null,hv=e=>mins(e.from,e.to,S.overnight);
+const missing=()=>[['code','Employee Code'],['name','Employee Name'],['dept','Department'],['email','Official Email ID'],['loc','Location'],['depot','Depot'],['region','Region']].filter(([k])=>!S.profile[k].trim()).map(x=>x[1]);
+function validate(e){const r=[];if(!/^\d{4}-\d\d-\d\d$/.test(e.date)||isNaN(Date.parse(e.date)))r.push('Invalid date');else if(e.date.slice(0,7)!==C.id)r.push('Date is outside the claim month');
+ [['km','Distance'],['rateOv','Rate override'],['fareOv','Travelling override'],['conv','Conveyance'],['lodg','Lodging'],['fws','Food (with supporting)'],['fwo','Food (without supporting)'],['board','Boarding'],['mob','Mobile']].forEach(([k,n])=>{if(has(e[k])&&!(+e[k]>=0))r.push(n+' must be a number ≥ 0')});
+ if(e.from&&tmin(e.from)==null||e.to&&tmin(e.to)==null)r.push('Invalid time');else if(e.from&&e.to&&mins(e.from,e.to,S.overnight)==null)r.push('To Time is earlier than From Time (overnight is off in Setup)');
+ S.custom.forEach(c=>{const v=e.cf[c.id];if(c.req&&c.type!=='bool'&&(!has(v)||Array.isArray(v)&&!v.length))r.push(c.label+' is required')});
+ if(C.entries.some(x=>x.date===e.date&&x.id!==e.id))r.push('An entry for this date already exists (one row per day)');return r}
+// ---- Views ----
+const nfmt=v=>v==null?'':inr(v),AR=' → ';
+const views={
+async claim(){const T=tot(C.entries),ks=(await kall()).filter(k=>k.startsWith('claim:')).sort().reverse(),ms=missing();
+ return`<div class="card hero"><small>${MN[C.month-1]} ${C.year}</small><div class=disp>₹${inr(T.all)}</div><div>${C.entries.length} entries · ${inr(T.km)} km</div></div>${ms.length?`<div class="card"><span class=er>Setup incomplete: ${ms.join(', ')}</span></div>`:''}
+ <div class=card><h4>Open / create claim</h4><div class=g><div class=f><label>Month</label><select id=cm>${MN.map((n,i)=>`<option value=${i+1} ${i+1==C.month?'selected':''}>${n}</option>`).join('')}</select></div><div class=f><label>Year</label><input id=cy type=number value=${C.year}></div></div>
+ <div class=row><button class=p data-a=oc>Open / Create</button><button data-a=dup>Duplicate current → selected</button><button data-a=sun>Prefill Sundays</button></div></div>
+ <div class=card><h4>Saved claims</h4>${ks.map(k=>{const[y,m]=k.slice(6).split('-').map(Number);return`<div class=row><button class=chip style="flex:1;justify-content:flex-start" data-a=oc2 data-k=${k.slice(6)}>${MN[m-1]} ${y}${k.slice(6)===C.id?' · open':''}</button><button class=d data-a=dc data-k=${k.slice(6)}>Delete</button></div>`}).join('')}</div>
+ <button class=fab data-a=add>${ic('add')}Add Daily Entry</button>`},
+async daily(){const T=tot(C.entries),H=['Employee Code','Date','From Time','To Time','Total Distance Covered (in Km)',`Amount of Travelling Expenses (@ Rs. ${S.rate}/- Per KM)`,'Total Hours','Conveyance other than own Vehicle','Lodging','Food (with supporting)','Food (without supporting)','Boarding','Mobile','Total Expenses','Market / Places Visited'];
+ const X=S.custom,rows=days().map(d=>({d,e:C.entries.find(x=>x.date===d)}));
+ return`<div class="cards list">${rows.map(({d,e})=>`<div class="day ${dow(d)==0?'su':''} ${e?'e':''}" data-a=ed data-d=${d}><div><b>${d.slice(8)} ${WD[dow(d)]}</b><br><small>${e?esc(stopT(e,AR))||'entry':'no entry'}</small></div>${e?`<em>₹${inr(total(e))}</em>`:''}</div>`).join('')}</div>
+ <div class="card tbl"><table><tr>${H.map(h=>`<th>${h}</th>`).join('')}${X.map(c=>`<th>${esc(c.label)}</th>`).join('')}</tr>${rows.map(({d,e})=>`<tr data-a=ed data-d=${d}><td>${esc(S.profile.code)}</td><td>${dmy(d)}</td>${e?`<td>${e.from}</td><td>${e.to}</td><td>${nfmt(has(e.km)?+e.km:null)}</td><td>${nfmt(fv(e))}</td><td>${hhmm(hv(e))}</td>${CATS.map(k=>`<td>${nfmt(has(e[k])?+e[k]:null)}</td>`).join('')}<td><b>${inr(total(e))}</b></td><td class=tl>${esc(stopT(e,AR,S.exportExtra))}</td>${X.map(c=>`<td class=tl>${esc([].concat(e.cf[c.id]??'').join(', '))}</td>`).join('')}`:`<td colspan=13></td>${X.map(()=>'<td></td>').join('')}`}</tr>`).join('')}
+ <tr><th>Total</th><th></th><th></th><th></th><th>${inr(T.km)}</th><th>${inr(T.fare)}</th><th></th>${CATS.map(k=>`<th>${inr(T[k])}</th>`).join('')}<th>${inr(T.all)}</th><th></th>${X.map(()=>'<th></th>').join('')}</tr></table></div><button class=fab data-a=add>${ic('add')}Add Daily Entry</button>`},
+async summary(){const T=tot(C.entries),R=[['Total Distance Covered',inr(T.km)+' km'],['Total Travelling Expenses',T.fare],['Total Conveyance',T.conv],['Total Lodging',T.lodg],['Total Food with supporting',T.fws],['Total Food without supporting',T.fwo],['Total Boarding',T.board],['Total Mobile',T.mob]];
+ return`<div class=card><h3>${MN[C.month-1]} ${C.year}</h3><table>${R.map(([a,b])=>`<tr><td class=tl>${a}</td><td>${typeof b==='number'?'₹'+inr(b):b}</td></tr>`).join('')}<tr><th class=tl>Total Claim Amount (in Rs)</th><th>₹${inr(T.all)}</th></tr></table><p><b>Total Claim-Amount (in words):</b><br>${words(T.all)}</p><small>Computed from the daily entries; nothing here is typed in by hand.</small></div>`},
+async setup(){const P=S.profile,pf=(k,l)=>`<div class=f><label>${l}</label><input data-f="profile.${k}" value="${esc(P[k])}"></div>`,
+ sw=(f,l)=>`<label class=ck>${l}<input class=sw type=checkbox data-f=${f} ${S[f]?'checked':''}></label>`,
+ le=(k,l)=>`<div class=card><h4>${l}</h4><input placeholder="Search…" data-q=${k}>${S[k].map((v,i)=>`<div class=row data-k=${k}><input value="${esc(v)}" data-li=${k}:${i}><button class="ib sm" data-a=lu data-k=${k} data-i=${i}>↑</button><button class="ib sm" data-a=lw data-k=${k} data-i=${i}>↓</button><button class="ib sm d" data-a=ld data-k=${k} data-i=${i}>✕</button></div>`).join('')}<div class=row><input id=add_${k} placeholder="Add new…"><button class=p data-a=la data-k=${k}>Add</button></div></div>`;
+ return`<div class=card><h4>Employee profile</h4>${['org:Organisation (heading)','code:Employee Code','name:Employee Name','dept:Department','email:Official Email ID','loc:Location','depot:Depot','region:Region','approver:Default approver name','disc:Footer / disclaimer'].map(x=>pf(...x.split(':'))).join('')}</div>
+ <div class=card><h4>Fare & calculation</h4><div class=f><label>Default rate per km (₹)</label><input type=number min=0 step=any data-f=rate value=${S.rate}></div>${sw('allowOv','Allow per-entry rate / travelling override')}${sw('overnight','To Time earlier than From Time = overnight')}${sw('sunPre','Prefill Sundays in new claims')}<small>Total Hours is the actual elapsed time (HH:MM), never rounded.</small></div>
+ ${le('places','Market / Places Visited')}${le('routes','Route presets (places separated by commas)')}${le('events','Events (attach to a place inside a route)')}${le('statuses','Entry statuses')}
+ <div class=card><h4>Custom fields</h4>${S.custom.map((c,i)=>`<div class=card style="background:var(--s2)"><div class=g><div class=f><label>Label</label><input data-cf=${i}:label value="${esc(c.label)}"></div><div class=f><label>Type</label><select data-cf=${i}:type>${['text','number','date','time','select','multi','currency','bool'].map(t=>`<option ${t==c.type?'selected':''}>${t}</option>`)}</select></div><div class=f><label>Default</label><input data-cf=${i}:def value="${esc(c.def)}"></div><div class=f><label>Options (comma-separated)</label><input data-cf=${i}:opts value="${esc(c.opts)}"></div></div><label class=ck>Mandatory<input class=sw type=checkbox data-cf=${i}:req ${c.req?'checked':''}></label><button class=d data-a=cfd data-i=${i}>Remove</button></div>`).join('')}<button data-a=cfa>${ic('add')}Add custom field</button>${sw('exportCustom','Custom fields as extra PDF/Excel columns')}${sw('exportExtra','Append remarks to places in PDF/Excel')}<small>The original 15 columns are never changed.</small></div>`},
+async backup(){return`<div class=card><h4>Backup</h4><p><small>Settings, lists, custom fields and every claim (schema 2).</small></p><button class=p data-a=json>${ic('export')}Download Snapshot (JSON)</button></div>
+ <div class=card><h4>Restore</h4><div class=row><button data-a=sample>Load pre-saved Oct 2026 sample</button></div><div class=f><label>Or choose a backup file</label><input type=file id=rf accept=".json,application/json"></div>${pend?(pend.err?`<p class=er>${pend.err.map(esc).join('<br>')}</p>`:`<p>${pend.b.sample?'<b>Pre-saved sample.</b> ':''}${pend.b.claims.length} claim(s): ${pend.b.claims.map(c=>ym(c.year,c.month)).join(', ')}</p><label class=ck>Replace everything (settings + all claims)<input type=radio name=rm value=all checked></label><label class=ck>Import claims only (same-month claims overwritten; my settings kept)<input type=radio name=rm value=claims></label><div class=row><button class=p data-a=rst>Restore…</button><button data-a=rno>Cancel</button></div>`):''}</div>
+ <div class=card><h4>Danger zone</h4><button class=d data-a=clear>Clear all application data</button></div>`},
+async export(){const ms=missing();return`<div class=card><h4>Export ${MN[C.month-1]} ${C.year}</h4>${ms.length?`<p class=er>Missing: ${ms.join(', ')}</p>`:''}<div class=row><button class=p style="flex:1" data-a=pdf>Download PDF</button><button class=p style="flex:1" data-a=xls>Export Excel</button></div><p><small>PDF: one A4 portrait page (shrinks text to fit). It prints “Rs.” and “->” because the standard PDF font lacks ₹ and →. Excel keeps ₹, → and live formulas. Libraries load from cdnjs, so the first load needs internet.</small></p></div>`}};
+const mk=()=>$('#nav').innerHTML=TABS.map(([t,l])=>`<button data-a=tab data-t=${t} class="${t==tab?'on':''}"><i>${ic(t)}</i>${l}</button>`).join('');
+async function render(){mk();$('#app').innerHTML=await views[tab]()}
+// ---- Entry sheet ----
+const AM=[['conv','Conveyance other than own vehicle'],['lodg','Lodging'],['fws','Food with supporting'],['fwo','Food without supporting'],['board','Boarding'],['mob','Mobile']];
+const fld=(k,l,t='number')=>`<div class=f><label>${l}</label><input type=${t} ${t=='number'?'min=0 step=any inputmode=decimal':''} data-e=${k} value="${esc(E[k]??'')}"></div>`;
+const splitR=r=>r.split(/\s*(?:,|→|->)\s*/).filter(Boolean);
+function pk(){const used={};C.entries.forEach(e=>e.places.forEach(s=>used[s.p]=(used[s.p]||0)+1));
+ const all=[...new Set([...S.places,...E.places.map(s=>s.p)])],q=pq.toLowerCase(),rec=all.filter(p=>used[p]).sort((a,b)=>used[b]-used[a]).slice(0,5),cnt=p=>E.places.filter(s=>s.p===p).length;
+ const pc=p=>`<button type=button class="chip ${cnt(p)?'on':''}" data-a=ap data-p="${esc(p)}">${esc(p)}${cnt(p)>1?' ×'+cnt(p):''}</button>`,L=E.places.length;
+ return`<div class=route>${L?E.places.map((s,i)=>`${i?'<span class=arr>→</span>':''}<div class=stop><b>${esc(s.p)}</b><select data-sev=${i}><option value="">Add event…</option>${[...new Set([...S.events,s.ev].filter(Boolean))].map(v=>`<option ${v===s.ev?'selected':''}>${esc(v)}</option>`).join('')}<option value=__new__>+ New event…</option></select><div class=row><button type=button class=sm data-a=ml data-i=${i}>‹</button><button type=button class=sm data-a=mr data-i=${i}>›</button><button type=button class="sm d" data-a=rs data-i=${i}>✕</button></div></div>`).join(''):'<small>Tap places below to build the route (tap a place twice to visit it twice).</small>'}</div>
+ ${L?`<small>${esc(stopT({places:E.places,status:''},AR))}</small>`:''}
+ ${S.routes.length?`<small>Route presets</small><div class=chips>${S.routes.map((r,i)=>`<button type=button class=chip data-a=rt data-i=${i}>${esc(splitR(r).join(AR))}</button>`).join('')}</div>`:''}
+ ${rec.length?`<small>Frequent</small><div class=chips>${rec.map(pc).join('')}</div>`:''}<small>All places</small><div class=chips>${all.filter(p=>p.toLowerCase().includes(q)).map(pc).join('')}</div>`}
+const rp=()=>{dirty=true;$('#pk').innerHTML=pk();calcUI()};
+function sheetH(){const e=E,st=[...new Set([...S.statuses,e.status])];
+ const cf=c=>{const v=e.cf[c.id],a=`data-e="cf.${c.id}"`,o=(c.opts||'').split(',').map(s=>s.trim()).filter(Boolean);
+  return c.type==='bool'?`<label class=ck>${esc(c.label)}<input class=sw type=checkbox ${a} ${v?'checked':''}></label>`:`<div class=f><label>${esc(c.label)}${c.req?' *':''}</label>${c.type==='select'||c.type==='multi'?`<select ${a} ${c.type==='multi'?'multiple':''}>${c.type==='select'?'<option value="">–</option>':''}${o.map(x=>`<option ${[].concat(v).includes(x)?'selected':''}>${esc(x)}</option>`).join('')}</select>`:`<input type=${c.type==='currency'?'number':c.type} ${a} value="${esc(v??'')}">`}</div>`};
+ return`<div><div class=row><h3 style="flex:1;margin:0;font-size:24px">Daily entry</h3><button class=ib data-a=close>${ic('close')}</button></div>
+ <div class=row><button class=ib data-a=pd>${ic('prev')}</button><div class=f><label>Date</label><input type=date data-e=date value=${e.date} min=${C.id}-01 max=${dstr(C.year,C.month,dim(C.year,C.month))}></div><button class=ib data-a=nd>${ic('next')}</button></div>
+ <div class=f><label>Status</label><select data-e=status>${st.map(s=>`<option ${s==e.status?'selected':''}>${esc(s)}</option>`).join('')}</select></div>
+ <div class=g>${fld('from','From Time','time')}${fld('to','To Time','time')}${fld('km','Total Distance Covered (km)')}${S.allowOv?fld('rateOv',`Rate/km override (default ${S.rate})`):''}${S.allowOv?fld('fareOv','Travelling Expenses override'):''}${AM.map(([k,l])=>fld(k,l)).join('')}</div>
+ <div id=cb></div><h4>Market / Places Visited</h4><div class=row><input id=pq placeholder="Search, or type a new place" value="${esc(pq)}"><button type=button data-a=np>${ic('add')}Add</button></div><label class=ck>Save typed place to my list<input class=sw type=checkbox id=svl checked></label><div id=pk>${pk()}</div>
+ ${S.custom.map(cf).join('')}<div class=f><label>Remarks</label><input data-e=remarks value="${esc(e.remarks)}"></div><div id=er class=er></div>
+ <div class=row><button class=p style="flex:1" data-a=sv>Save</button><button style="flex:1" data-a=svn>Save & next ›</button></div>${C.entries.some(x=>x.id===e.id)?'<button class=d data-a=del>Delete this entry</button>':''}</div>`}
+function calcUI(){const e=E;$('#cb').innerHTML=`Travelling <b>₹${inr(fare(e))}</b>${has(e.fareOv)||has(e.rateOv)?' <small>(override)</small>':''} · Hours <b>${hhmm(hv(e))||'–'}</b> · Day total <b>₹${inr(total(e))}</b>`;$('#er').innerHTML=validate(e).map(esc).join('<br>')}
+function openE(d){E=structuredClone(C.entries.find(x=>x.date===d)||blank(d));dirty=false;pq='';$('#sheet').innerHTML=sheetH();$('#sheet').hidden=false;calcUI()}
+async function saveE(){const er=validate(E);if(er.length){calcUI();toast(er[0],1);return false}const i=C.entries.findIndex(x=>x.id===E.id);i<0?C.entries.push(structuredClone(E)):C.entries[i]=structuredClone(E);C.entries.sort((a,b)=>a.date<b.date?-1:1);if(!await persistC())return false;dirty=false;toast('Entry saved');return true}
+async function nav(d){if(!/^\d{4}-\d\d-\d\d$/.test(d)||d.slice(0,7)!==C.id){toast('That date is outside this claim month',1);$('#sheet').innerHTML=sheetH();calcUI();return}if(dirty&&!await saveE())return;openE(d)}
+// ---- Exports ----
+const dl=(blob,n)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000)};
+const fname=x=>`TADA_${S.profile.code||'claim'}_${C.id}.${x}`;
+const chk=()=>{const m=missing();return!m.length||confirm('Missing mandatory details: '+m.join(', ')+'.\nExport anyway?')};
+function pdf(){if(!window.jspdf||!jspdf.jsPDF.API.autoTable)return toast('PDF library did not load (internet needed on first load).',1);if(!chk())return;
+ const P=S.profile,T=tot(C.entries),X=S.exportCustom?S.custom:[],m=6,pw=210,ph=297,cw=pw-2*m;
+ const head=[['Employee Code','Date','From Time','To Time','Total Distance Covered (in Km)',`Amount of Travelling Expenses (@ Rs. ${S.rate}/- Per KM)`,'Total Hours','Conveyance other than own Vehicle','Lodging','Food (with supporting)','Food (without supporting)','Boarding','Mobile','Total Expenses','Market / Places Visited',...X.map(c=>c.label)]];
+ const body=days().map(dt=>{const e=C.entries.find(x=>x.date===dt);return[P.code,dmy(dt),...e?[e.from,e.to,nfmt(has(e.km)?+e.km:null),nfmt(fv(e)),hhmm(hv(e)),...CATS.map(k=>nfmt(has(e[k])?+e[k]:null)),inr(total(e)),stopT(e,' -> ',S.exportExtra),...X.map(c=>[].concat(e.cf[c.id]??'').join(', '))]:Array(13+X.length).fill('')]});
+ const foot=[['Total','','','',inr(T.km),inr(T.fare),'',inr(T.conv),inr(T.lodg),inr(T.fws),inr(T.fwo),inr(T.board),inr(T.mob),inr(T.all),'',...X.map(()=>'')]];
+ const W=[13,15,8.5,8.5,10,11,9.5,11,10.5,10.5,11,9.5,8.5,11.5],cs={};W.push(Math.max(22,cw-W.reduce((a,b)=>a+b,0)-16*X.length),...X.map(()=>16));W.forEach((w,i)=>cs[i]={cellWidth:w,halign:i<4?'center':i<14?'right':'left'});
+ const build=fs=>{const d=new jspdf.jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+  d.setFont('helvetica','bold').setFontSize(13).text(P.org,pw/2,m+5,{align:'center'});d.setFont('helvetica','normal').setFontSize(8).text('*All Field are mandatory to fill',pw-m,m+9,{align:'right'});
+  d.text(`*Employee Code : ${P.code}     *Employee Name: ${P.name}     *Department : ${P.dept}`,m,m+13);d.text(`*Official Email ID: ${P.email}`,m,m+17);d.text(`*Location:- ${P.loc}     *Depot : ${P.depot}     *Region: ${P.region}     Claim Month: ${MN[C.month-1]} ${C.year}`,m,m+21);
+  d.autoTable({head,body,foot,startY:m+24,margin:{left:m,right:m,top:m,bottom:m},tableWidth:cw,theme:'grid',showFoot:'lastPage',rowPageBreak:'avoid',styles:{fontSize:fs,cellPadding:{top:.6,bottom:.6,left:.7,right:.7},lineColor:0,lineWidth:.1,textColor:0,overflow:'linebreak',valign:'middle'},headStyles:{fillColor:[235,235,235],textColor:0,fontSize:Math.max(4,fs-1.3),halign:'center',fontStyle:'bold'},footStyles:{fillColor:[245,245,245],textColor:0,fontStyle:'bold'},columnStyles:cs});
+  const y=d.lastAutoTable.finalY+4;if(d.getNumberOfPages()>1||y+42>ph-m)return{ok:false};
+  d.setFont('helvetica','bold').setFontSize(9).text('Total Claim Amount (in Rs): Rs. '+inr(T.all),m,y+3);d.setFontSize(8.5).text('Total Claim-Amount (in words):',m,y+10);d.setFont('helvetica','normal').text(d.splitTextToSize(words(T.all),cw-52),m+50,y+10);
+  d.setFont('helvetica','bold').text('Signature of Claimant: ______________________',m,y+24);d.text('Approved By (Signature): ______________________',pw/2+4,y+24);d.text('Name of Approver: '+(P.approver||'______________'),pw/2+4,y+31);
+  d.setFont('helvetica','normal').setFontSize(7.5).text(P.disc,pw/2,y+38,{align:'center'});return{ok:true,d}};
+ let r;for(let fs=8.5;fs>=4.5;fs-=.4){r=build(fs);if(r.ok)break}
+ if(!r.ok)return toast('Cannot fit this claim on one A4 page. Turn off the extra columns in Setup.',1);
+ dl(r.d.output('blob'),fname('pdf'));toast('PDF downloaded (1 page, A4)')}
+async function xls(){if(!window.ExcelJS)return toast('Excel library did not load (internet needed on first load).',1);if(!chk())return;
+ try{const wb=new ExcelJS.Workbook(),P=S.profile,T=tot(C.entries),X=S.exportCustom?S.custom:[],nc=15+X.length,L=n=>ws.getColumn(n).letter;
+ const ws=wb.addWorksheet(MN[C.month-1].slice(0,3)+' '+C.year+' TA DA',{views:[{state:'frozen',ySplit:7}],pageSetup:{orientation:'portrait',paperSize:9,fitToPage:true,fitToWidth:1,fitToHeight:1,printTitlesRow:'7:7',margins:{left:.3,right:.3,top:.4,bottom:.4,header:.2,footer:.2}}});
+ [11,11,8,8,10,13,9,12,10,9,10,9,9,11,38,...X.map(()=>16)].forEach((w,i)=>ws.getColumn(i+1).width=w);
+ const B={style:'thin'},bd={top:B,left:B,bottom:B,right:B},MF='[>=10000000]"₹"##\\,##\\,##\\,##0;[>=100000]"₹"##\\,##\\,##0;"₹"##,##0';
+ const put=(r,c1,c2,v,o={})=>{if(c2>c1)ws.mergeCells(r,c1,r,c2);const c=ws.getCell(r,c1);c.value=v;c.alignment={vertical:'middle',wrapText:true,...o.al};if(o.b)c.font={bold:true,size:o.sz};if(o.bd)for(let i=c1;i<=c2;i++)ws.getCell(r,i).border=bd;if(o.f)c.numFmt=o.f;return c};
+ put(1,1,nc,P.org,{b:1,sz:14,al:{horizontal:'center'}});put(2,1,nc,'*All Field are mandatory to fill',{al:{horizontal:'right'}});
+ put(3,1,7,'*Employee Code : '+P.code,{b:1,bd:1});put(3,8,nc,'',{bd:1});put(4,1,7,'*Employee Name: '+P.name,{b:1,bd:1});put(4,8,nc,'*Official Email ID: '+P.email,{b:1,bd:1,al:{horizontal:'right'}});
+ put(5,1,7,'*Department : '+P.dept,{b:1,bd:1});put(5,8,nc,`Claim Month: ${MN[C.month-1]} ${C.year}`,{b:1,bd:1});
+ put(6,1,5,'*Location:- '+P.loc,{b:1,bd:1});put(6,6,9,'*Depot : '+P.depot,{b:1,bd:1});put(6,10,nc,'*Region: '+P.region,{b:1,bd:1});
+ ['Employee Code','Date','From Time','To Time','Total Distance Covered (in km)','Amount of Travelling Expenses (@ Rs. '+S.rate+'/- Per KM)','Total Hours','Conveyance other than own Vehicle','Lodging','Food (with supporting)','Food (without supporting)','Boarding','Mobile','Total Expenses','Market / Places Visited',...X.map(c=>c.label)].forEach((h,i)=>{const c=put(7,i+1,i+1,h,{b:1,bd:1,al:{horizontal:'center'}});c.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFEDEDED'}}});ws.getRow(7).height=54;
+ const ds=days(),f0=8,fl=f0+ds.length-1,tr=fl+1;
+ ds.forEach((dt,i)=>{const r=f0+i,e=C.entries.find(x=>x.date===dt);put(r,1,1,P.code,{bd:1,al:{horizontal:'center'}});put(r,2,2,new Date(Date.UTC(C.year,C.month-1,+dt.slice(8))),{bd:1,f:'dd-mm-yyyy',al:{horizontal:'center'}});
+  for(let c=3;c<=nc;c++)ws.getCell(r,c).border=bd;if(!e)return;
+  const tm=(c,v)=>{if(tmin(v)!=null){const x=ws.getCell(r,c);x.value=tmin(v)/1440;x.numFmt='hh:mm'}};tm(3,e.from);tm(4,e.to);
+  if(has(e.km))ws.getCell(r,5).value=+e.km;
+  // rate is written into the formula itself (no separate rate cell)
+  if(has(e.fareOv))ws.getCell(r,6).value=R2(e.fareOv);else if(has(e.km))ws.getCell(r,6).value={formula:`ROUND(E${r}*${has(e.rateOv)?+e.rateOv:S.rate},2)`,result:fare(e)};
+  const h=hv(e);if(h!=null){ws.getCell(r,7).value={formula:S.overnight?`MOD(D${r}-C${r},1)`:`D${r}-C${r}`,result:h/1440};ws.getCell(r,7).numFmt='[h]:mm'}
+  CATS.forEach((k,j)=>{if(has(e[k]))ws.getCell(r,8+j).value=+e[k]});for(let c=6;c<=14;c++)if(c!=7)ws.getCell(r,c).numFmt=MF;
+  ws.getCell(r,14).value={formula:`SUM(F${r},H${r}:M${r})`,result:total(e)};put(r,15,15,stopT(e,AR,S.exportExtra),{bd:1});X.forEach((c,j)=>put(r,16+j,16+j,[].concat(e.cf[c.id]??'').join(', '),{bd:1}))});
+ put(tr,1,1,'Total',{b:1,bd:1});for(let c=2;c<=nc;c++)ws.getCell(tr,c).border=bd;
+ [[5,T.km],[6,T.fare],[8,T.conv],[9,T.lodg],[10,T.fws],[11,T.fwo],[12,T.board],[13,T.mob],[14,T.all]].forEach(([c,v])=>{const x=ws.getCell(tr,c);x.value={formula:`SUM(${L(c)}${f0}:${L(c)}${fl})`,result:v};x.font={bold:true};if(c>5)x.numFmt=MF});
+ put(tr+2,1,5,'Total Claim Amount (in Rs):',{b:1,bd:1});put(tr+2,6,8,{formula:`N${tr}`,result:T.all},{b:1,bd:1,f:MF});
+ put(tr+3,1,5,'Total Claim-Amount (in words):',{b:1,bd:1});put(tr+3,6,nc,words(T.all),{b:1,bd:1});
+ put(tr+6,1,5,'Signature of Claimant: ____________________',{b:1});put(tr+6,8,13,'Approved By (Signature): ____________________',{b:1});put(tr+7,8,10,'Name of Approver:',{b:1});put(tr+7,11,14,P.approver,{b:1});put(tr+9,1,nc,P.disc,{al:{horizontal:'center'}});
+ dl(new Blob([await wb.xlsx.writeBuffer()],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),fname('xlsx'));toast('Excel file downloaded')}catch(x){toast('Excel export failed: '+x.message,1)}}
+// ---- Backup / restore ----
+async function json(){try{const ks=(await kall()).filter(k=>k.startsWith('claim:')),claims=[];for(const k of ks)claims.push(await kget(k));
+ dl(new Blob([JSON.stringify({app:'tada-claim',schema:2,created:new Date().toISOString(),settings:S,claims},null,1)],{type:'application/json'}),`tada-backup-${new Date().toISOString().slice(0,10)}.json`);toast(`Snapshot downloaded (${claims.length} claims)`)}catch(x){toast('Backup failed: '+x.message,1)}}
+function vb(b){const e=[];if(!b||b.app!=='tada-claim')return['Not a TA/DA backup file.'];if(!Number.isInteger(b.schema))e.push('Missing schema version.');else if(b.schema>2)e.push(`Backup schema v${b.schema} is newer than this app (v2); update the app.`);else if(b.schema<1)e.push('Unsupported old schema v'+b.schema+'.');
+ if(!b.settings||typeof b.settings!=='object'||!b.settings.profile||!(b.settings.rate>=0))e.push('Settings missing or rate invalid.');else['places','events','routes','statuses','custom'].forEach(k=>{if(!Array.isArray(b.settings[k]))e.push('settings.'+k+' must be a list.')});
+ if(!Array.isArray(b.claims))e.push('claims must be a list.');else b.claims.forEach((c,i)=>{if(!(c&&c.year>2000&&c.month>=1&&c.month<=12&&Array.isArray(c.entries)))e.push(`claim #${i+1} is invalid.`);else c.entries.forEach((x,j)=>{if(!x||!/^\d{4}-\d\d-\d\d$/.test(x.date||'')||x.date.slice(0,7)!==ym(c.year,c.month)||!x.id||!Array.isArray(x.places))e.push(`claim ${ym(c.year,c.month)} entry ${j+1} is invalid.`)})});return e.slice(0,8)}
+async function restore(){const mode=document.querySelector('input[name=rm]:checked').value,b=pend.b,ex=(await kall()).filter(k=>k.startsWith('claim:')),ow=b.claims.filter(c=>ex.includes('claim:'+ym(c.year,c.month))).map(c=>ym(c.year,c.month));
+ if(!confirm(mode==='all'?`REPLACE all current settings and ${ex.length} claim(s) with the backup (${b.claims.length} claim(s))?`:`Import ${b.claims.length} claim(s)?${ow.length?'\nThese existing months will be overwritten: '+ow.join(', '):''}`))return;
+ try{b.claims.forEach(c=>c.entries.forEach(normE));for(const c of b.claims)await kset('claim:'+ym(c.year,c.month),{...c,id:ym(c.year,c.month)});
+  if(mode==='all'){await kset('settings',cleanS(b.settings));const keep=b.claims.map(c=>'claim:'+ym(c.year,c.month));for(const k of ex)if(!keep.includes(k))await kdel(k)}
+  S=cleanS(await kget('settings'));const n=(await kall()).filter(k=>k.startsWith('claim:')).length,last=b.claims[b.claims.length-1];if(last)await openC(last.year,last.month);else await openC(C.year,C.month);pend=null;tab='claim';await render();toast(`Restored. ${n} claim(s) in database; open claim total ₹${inr(tot(C.entries).all)}`)}catch(x){toast('Restore failed: '+x.message,1)}}
+// ---- Actions ----
+const A={tab(b){tab=b.dataset.t;render()},add(){openE(defDate())},ed(b){openE(b.dataset.d)},
+ async close(){if(dirty&&!confirm('Discard unsaved changes?'))return;$('#sheet').hidden=true;E=null;render()},
+ async sv(){if(await saveE()){$('#sheet').hidden=true;E=null;render()}},async svn(){if(dirty&&!await saveE())return;nav(shift(E.date,1))},pd(){nav(shift(E.date,-1))},nd(){nav(shift(E.date,1))},
+ async del(){if(!confirm('Delete the entry for '+dmy(E.date)+'?'))return;C.entries=C.entries.filter(x=>x.id!==E.id);if(await persistC()){$('#sheet').hidden=true;E=null;render();toast('Entry deleted')}},
+ ap(b){E.places.push({p:b.dataset.p,ev:''});rp()},rs(b){E.places.splice(+b.dataset.i,1);rp()},
+ ml(b){const i=+b.dataset.i;if(i>0){[E.places[i-1],E.places[i]]=[E.places[i],E.places[i-1]];rp()}},mr(b){const i=+b.dataset.i;if(i<E.places.length-1){[E.places[i+1],E.places[i]]=[E.places[i],E.places[i+1]];rp()}},
+ rt(b){E.places=splitR(S.routes[+b.dataset.i]).map(p=>({p,ev:''}));rp()},
+ np(){const v=$('#pq').value.trim();if(!v)return;E.places.push({p:v,ev:''});if($('#svl').checked&&!S.places.includes(v)){S.places.push(v);saveS()}pq='';$('#pq').value='';rp()},
+ la(b){const k=b.dataset.k,v=$('#add_'+k).value.trim();if(!v)return;if(S[k].includes(v))return toast('“'+v+'” is already in the list',1);S[k].push(v);saveS();render()},
+ ld(b){const k=b.dataset.k;if(confirm('Remove “'+S[k][+b.dataset.i]+'”? Existing entries keep their saved text.')){S[k].splice(+b.dataset.i,1);saveS();render()}},
+ lu(b){const k=b.dataset.k,i=+b.dataset.i;if(i>0){[S[k][i-1],S[k][i]]=[S[k][i],S[k][i-1]];saveS();render()}},lw(b){const k=b.dataset.k,i=+b.dataset.i;if(i<S[k].length-1){[S[k][i+1],S[k][i]]=[S[k][i],S[k][i+1]];saveS();render()}},
+ cfa(){S.custom.push({id:'cf'+uid().slice(0,6),label:'New field',type:'text',def:'',opts:'',req:false});saveS();render()},cfd(b){if(confirm('Remove this custom field definition?')){S.custom.splice(+b.dataset.i,1);saveS();render()}},
+ async oc(){const y=+$('#cy').value,m=+$('#cm').value;if(!(y>=2000&&y<=2100))return toast('Enter a valid year',1);await openC(y,m);render();toast(`${MN[m-1]} ${y} claim open`)},
+ async oc2(b){const[y,m]=b.dataset.k.split('-').map(Number);await openC(y,m);render()},
+ async dc(b){const k=b.dataset.k;if(!confirm('Delete the whole claim '+k+'? This cannot be undone.'))return;await kdel('claim:'+k);if(k===C.id){const n=new Date();await openC(n.getFullYear(),n.getMonth()+1)}render();toast('Claim deleted')},
+ async sun(){const n=sundays();if(!n)return toast('All Sundays already have entries');if(await persistC()){render();toast(n+' Sunday entr'+(n>1?'ies':'y')+' added')}},
+ async dup(){const ty=+$('#cy').value,tm=+$('#cm').value,id=ym(ty,tm);if(!(ty>=2000&&ty<=2100))return toast('Enter a valid year',1);if(id===C.id)return toast('Select a different month/year first',1);if(await kget('claim:'+id)&&!confirm('A claim for '+id+' exists. Overwrite it?'))return;
+  const keep=C.entries.filter(e=>e.status!=='Sunday'&&+e.date.slice(8)<=dim(ty,tm));C={id,year:ty,month:tm,created:new Date().toISOString(),entries:keep.map(e=>({...structuredClone(e),id:uid(),date:dstr(ty,tm,+e.date.slice(8))}))};if(S.sunPre)sundays();if(await persistC()){render();toast('Draft created for '+id+' (Sundays re-marked for the new month)')}},
+ sample(){pend={b:sampleB(),err:null};render()},json,pdf,xls,rst:restore,rno(){pend=null;render()},
+ async clear(){if(!confirm('Delete ALL claims, settings and lists from this browser?')||!confirm('Really delete everything? Download a backup first if unsure.'))return;try{for(const k of await kall())await kdel(k);S=cleanS(defS());await kset('settings',S);const n=new Date();await openC(n.getFullYear(),n.getMonth()+1);tab='claim';render();toast('All data cleared')}catch(x){toast('Clear failed: '+x.message,1)}}};
+function defDate(){const n=new Date(),t=dstr(n.getFullYear(),n.getMonth()+1,n.getDate());if(t.slice(0,7)===C.id&&!C.entries.some(e=>e.date===t))return t;return days().find(d=>!C.entries.some(e=>e.date===d))||days()[0]}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(b&&A[b.dataset.a])A[b.dataset.a](b,e)});
+document.addEventListener('input',e=>{const t=e.target,f=t.dataset.f,k=t.dataset.e;
+ if(f){const v=t.type==='checkbox'?t.checked:t.type==='number'?(t.value===''?NaN:+t.value):t.value;if(f==='rate'&&!(v>=0)){t.style.boxShadow='inset 0 0 0 2px var(--er)';return}t.style.boxShadow='';const p=f.split('.');(p.length>1?S[p[0]]:S)[p[p.length-1]]=v;saveS()}
+ else if(k&&k!=='date'){const v=t.type==='checkbox'?t.checked:t.multiple?[...t.selectedOptions].map(o=>o.value):t.type==='number'?(t.value===''?null:+t.value):t.value;if(k.startsWith('cf.'))E.cf[k.slice(3)]=v;else E[k]=v;dirty=true;calcUI()}
+ else if(t.id==='pq'){pq=t.value;$('#pk').innerHTML=pk()}
+ else if(t.dataset.q){const q=t.value.toLowerCase();document.querySelectorAll(`.row[data-k=${t.dataset.q}]`).forEach(r=>r.hidden=!r.querySelector('input').value.toLowerCase().includes(q))}});
+document.addEventListener('change',async e=>{const t=e.target;
+ if(t.dataset.e==='date')nav(t.value);
+ else if(t.dataset.sev!=null){const i=+t.dataset.sev;let v=t.value;if(v==='__new__'){v=(prompt('New event name')||'').trim();if(v&&!S.events.includes(v)){S.events.push(v);saveS()}}E.places[i].ev=v;rp()}
+ else if(t.dataset.li){const[k,i]=t.dataset.li.split(':'),v=t.value.trim();if(v&&!S[k].some((x,j)=>x===v&&j!=i)){S[k][+i]=v;saveS()}else{if(v)toast('That value already exists',1);t.value=S[k][+i]}}
+ else if(t.dataset.cf){const[i,p]=t.dataset.cf.split(':');S.custom[+i][p]=t.type==='checkbox'?t.checked:t.value;saveS()}
+ else if(t.id==='rf'&&t.files[0]){try{const b=mig(JSON.parse(await t.files[0].text()));pend={b,err:vb(b)};if(!pend.err.length)pend.err=null}catch(x){pend={err:['Could not read file: '+x.message]}}render()}});
+window.addEventListener('beforeunload',e=>{if(dirty)e.preventDefault()});
+(async()=>{try{let raw=await kget('settings'),seeded=false;if(!raw){const b=sampleB();raw=b.settings;await kset('settings',raw);for(const c of b.claims)await kset('claim:'+c.id,c);await kset('current','2026-10');seeded=true}
+ S=cleanS(raw);await kset('settings',S);const cur=await kget('current'),n=new Date();let[y,m]=/^\d{4}-\d\d$/.test(cur||'')?cur.split('-').map(Number):[n.getFullYear(),n.getMonth()+1];await openC(y,m);await render();if(seeded)toast('Pre-saved October 2026 claim loaded. Edit it, or clear it under Backup.')}
+ catch(x){stat('Storage error');$('#app').innerHTML='<div class=card><p class=er>IndexedDB is unavailable ('+esc(x.message)+'). Use a normal (non-private) browser window, or serve this page from http://localhost.</p></div>'}})();
+</script></body></html>
