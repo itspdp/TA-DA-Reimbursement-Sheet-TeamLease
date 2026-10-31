@@ -26,23 +26,9 @@ It is a single HTML file. There is no server, no login and no build step. Your d
 
 ## Getting started
 
-### Option 1: just open it
+### just open it
 
 Download `index.html` and open it in a modern browser (Chrome, Edge, Safari or Firefox).
-
-### Option 2: run a local server
-
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-### Option 3: host it free with GitHub Pages
-
-1. Push this repository to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
-4. Open the link GitHub gives you on your phone and use **Add to Home Screen** to keep it handy.
 
 > The PDF, Excel and font libraries are loaded from the internet the first time you use the app, so you need a connection for that first visit.
 
