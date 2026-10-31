@@ -1,0 +1,33 @@
+// Logic tests: node test.js   (also regenerates sample-claim-oct2026.json from the app's own sample builder)
+const fs=require('fs'),assert=require('assert');
+const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const scripts=[...html.matchAll(/<script(?![^>]*src)[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+scripts.forEach(s=>new Function(s)); // syntax check of both inline scripts
+const K=new Function(scripts[0]+';return{set:s=>S=s,fare,total,tot,mins,hhmm,words,inr,stopT,normE,mig,cleanS,sampleB,defS}')();
+const b=K.sampleB();fs.writeFileSync(__dirname+'/sample-claim-oct2026.json',JSON.stringify(b,null,1));
+K.set(b.settings);const es=b.claims[0].entries,by=d=>es.find(e=>e.date==='2026-10-'+d);let n=0;
+const t=(name,f)=>{f();n++;console.log('ok',name)};
+t('1 Oct: 192km=1152, total 1302',()=>{assert.equal(K.fare(by('01')),1152);assert.equal(K.total(by('01')),1302)});
+t('3 Oct: 65km=390, total 540',()=>{assert.equal(K.fare(by('03')),390);assert.equal(K.total(by('03')),540)});
+t('4 Oct: Sunday total 0',()=>assert.equal(K.total(by('04')),0));
+t('5 Oct: 1128+1000+150=2278',()=>assert.equal(K.total(by('05')),2278));
+t('31 Oct: total 1338',()=>assert.equal(K.total(by('31')),1338));
+t('26 Oct: conveyance+lodging+food=1410',()=>assert.equal(K.total(by('26')),1410));
+const T=K.tot(es);
+t('month totals reconcile to PDF (3091 km, 18546, 520, 14000, 0, 3450, 36516)',()=>assert.deepEqual([T.km,T.fare,T.conv,T.lodg,T.fws,T.fwo,T.all],[3091,18546,520,14000,0,3450,36516]));
+t('category sum equals claim total',()=>assert.equal(T.fare+T.conv+T.lodg+T.fws+T.fwo+T.board+T.mob,T.all));
+t('rate change updates fare',()=>{K.set({...b.settings,rate:7});assert.equal(K.fare(by('01')),1344);K.set(b.settings)});
+t('rate / fare override',()=>{assert.equal(K.fare({km:100,rateOv:5}),500);assert.equal(K.fare({km:100,fareOv:450}),450)});
+t('hours: 09:00-18:00=09:00, 06:30-18:00=11:30',()=>{assert.equal(K.hhmm(K.mins('09:00','18:00')),'09:00');assert.equal(K.hhmm(K.mins('06:30','18:00')),'11:30')});
+t('hours overnight 22:00-06:30=08:30; off -> null; missing -> null',()=>{assert.equal(K.hhmm(K.mins('22:00','06:30')),'08:30');assert.equal(K.mins('22:00','06:30',false),null);assert.equal(K.mins('07:00',''),null)});
+t('words: 36516 / 0 / lakh / crore / paise / invalid',()=>{assert.equal(K.words(36516),'Thirty-six thousand five hundred sixteen Indian rupees only.');assert.equal(K.words(0),'Zero Indian rupees only.');assert.equal(K.words(125000),'One lakh twenty-five thousand Indian rupees only.');assert.equal(K.words(12345678),'One crore twenty-three lakh forty-five thousand six hundred seventy-eight Indian rupees only.');assert.equal(K.words(10.5),'Ten Indian rupees and fifty paise only.');assert.equal(K.words('x'),'');assert.equal(K.words(-5),'')});
+t('Indian grouping',()=>{assert.equal(K.inr(3651600),'36,51,600');assert.equal(K.inr(36516),'36,516')});
+t('blank vs zero',()=>assert.equal(K.total({km:null,conv:'',lodg:0}),0));
+t('route text uses arrows and puts the event beside its place',()=>assert.equal(K.stopT(by('27'),' → '),'Seoni → Balaghat (Shilpkaar Sangam) → Seoni'));
+t('PDF arrow variant',()=>assert.equal(K.stopT(by('01'),' -> '),'Betul Market -> Chhindwara Market -> Amla Market'));
+t('status shown when no places (Sunday/Holiday/Leave)',()=>{assert.equal(K.stopT(by('04'),' → '),'Sunday');assert.equal(K.stopT(by('02'),' → '),'Holiday')});
+t('same place twice is kept (Amla → Betul → Amla)',()=>assert.deepEqual(by('03').places.map(s=>s.p),['Amla','Betul Market','Amla']));
+t('schema-1 backup migrates (string places -> stops, event -> remarks)',()=>{const o={schema:1,claims:[{entries:[{places:['A','B'],event:'Fair',remarks:''}]}]};K.mig(o);assert.equal(o.schema,2);assert.deepEqual(o.claims[0].entries[0].places,[{p:'A',ev:''},{p:'B',ev:''}]);assert.equal(o.claims[0].entries[0].remarks,'Event: Fair');assert.equal(o.claims[0].entries[0].event,undefined)});
+t('restored settings are sanitised (bad ids/types/rate/non-string profile)',()=>{const s=K.cleanS({rate:-3,profile:{code:123},custom:[{id:'x" onfocus="y',type:'script',label:5}]});assert.equal(s.rate,6);assert.equal(s.profile.code,'123');assert.ok(/^[\w-]+$/.test(s.custom[0].id));assert.equal(s.custom[0].type,'text')});
+t('sample: 31 unique dates, 4 Sundays are entries or work days',()=>assert.equal(new Set(es.map(e=>e.date)).size,31));
+console.log(n+' tests passed; sample JSON regenerated');
