@@ -42,7 +42,7 @@ Download `index.html` and open it in a modern browser (Chrome, Edge, Safari or F
 6. **Export:** in **Export**, download the PDF or the Excel file.
 7. **Back up:** in **Backup**, download a snapshot regularly.
 
-The app also has a floating **?** button with a step-by-step guide.
+## The app also has a floating **?** button with a step-by-step guide.
 
 ## How the numbers work
 
