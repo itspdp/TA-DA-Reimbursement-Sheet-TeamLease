@@ -1,995 +1,890 @@
 {
-  "app": "tada-claim",
-  "schema": 2,
-  "created": "2026-10-30T00:00:00.000Z",
-  "sample": true,
-  "settings": {
-    "profile": {
-      "org": "Teamlease Services Limited",
-      "code": "ABCXYZ",
-      "name": "PRANAY DEEP",
-      "dept": "RETAIL SERVICE",
-      "email": "dummy@gmail.com",
-      "loc": "BETUL",
-      "depot": "NARMADAPURAM",
-      "region": "MAHAKAUSHAL",
-      "approver": "MR. PDP",
-      "disc": "This is Strictly for Internal Circulation and should not be shared with anyone outside UTCL."
-    },
-    "rate": 6,
-    "allowOv": true,
-    "overnight": true,
-    "sunPre": true,
-    "places": [
-      "Amla Market",
-      "Betul Market",
-      "Chhindwara Market",
-      "Seoni Local Market",
-      "Multai",
-      "Balaghat",
-      "Amla",
-      "Seoni",
-      "Chhapara",
-      "Palari",
-      "Kurai",
-      "Keolari",
-      "Balaghat Saletekha Market",
-      "Waraseoni",
-      "Dongarmali",
-      "Balaghat Local Market",
-      "Tirodi",
-      "Katangi",
-      "Chhindwara",
-      "Shapur Chopna",
-      "Bisnoor",
-      "Athner",
-      "Chicoli",
-      "Damjipura",
-      "Pandhruna",
-      "Seoni Market",
-      "Chappara",
-      "Khurai",
-      "Betul",
-      "Narmadapuram"
-    ],
-    "events": [
-      "Shilpkaar Sangam"
-    ],
-    "routes": [
-      "Chhindwara, Seoni, Amla"
-    ],
-    "statuses": [
-      "Working",
-      "Sunday",
-      "Holiday",
-      "Leave"
-    ],
-    "custom": [],
-    "exportCustom": false,
-    "exportExtra": false
+ "app": "tada-claim",
+ "schema": 2,
+ "created": "2026-11-05T00:00:00.000Z",
+ "sample": true,
+ "settings": {
+  "profile": {
+   "org": "Teamlease Services Limited",
+   "code": "ABC@9014",
+   "name": "PRANAY DEEP",
+   "dept": "RETAIL SERVICE",
+   "email": "dummy@gmail.com",
+   "loc": "BETUL",
+   "depot": "NARMADAPURAM",
+   "region": "MAHAKAUSHAL",
+   "approver": "MR. PDP",
+   "disc": "This is Strictly for Internal Circulation and should not be shared with anyone outside UTCL."
   },
-  "claims": [
+  "rate": 6,
+  "allowOv": true,
+  "overnight": true,
+  "sunPre": true,
+  "pdfOri": "portrait",
+  "bkDays": 7,
+  "places": [
+   "Amla",
+   "Betul",
+   "Jabalpur",
+   "Chhindwara",
+   "Bhopal",
+   "Itarsi",
+   "Narmadapuram",
+   "Seoni",
+   "Indore",
+   "Balaghat",
+   "Sanchi"
+  ],
+  "events": [
+   "Shilpkaar Shangam",
+   "Review Meeting",
+   "Training Camp"
+  ],
+  "routes": [
+   "Amla, Betul, Itarsi, Bhopal",
+   "Chhindwara, Seoni, Balaghat"
+  ],
+  "statuses": [
+   "Working",
+   "Sunday",
+   "Holiday",
+   "Leave"
+  ],
+  "custom": [],
+  "exportCustom": false,
+  "exportExtra": false
+ },
+ "claims": [
+  {
+   "id": "2026-10",
+   "year": 2026,
+   "month": 10,
+   "created": "2026-11-05T00:00:00.000Z",
+   "entries": [
     {
-      "id": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "created": "2026-10-30T00:00:00.000Z",
-      "entries": [
-        {
-          "id": "sample-2026-10-01",
-          "date": "2026-10-01",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 87,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Betul Market",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara Market",
-              "ev": ""
-            },
-            {
-              "p": "Amla Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-02",
-          "date": "2026-10-02",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Holiday",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-03",
-          "date": "2026-10-03",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 37,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Betul Market",
-              "ev": ""
-            },
-            {
-              "p": "Amla",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-04",
-          "date": "2026-10-04",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Sunday",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-05",
-          "date": "2026-10-05",
-          "from": "06:30",
-          "to": "18:00",
-          "km": 98,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Seoni Local Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-06",
-          "date": "2026-10-06",
-          "from": "10:00",
-          "to": "19:00",
-          "km": 71,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Chhapara",
-              "ev": ""
-            },
-            {
-              "p": "Palari",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-07",
-          "date": "2026-10-07",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 84,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Kurai",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Keolari",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-08",
-          "date": "2026-10-08",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 92,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Balaghat Saletekha Market",
-              "ev": ""
-            },
-            {
-              "p": "Balaghat",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-09",
-          "date": "2026-10-09",
-          "from": "08:00",
-          "to": "18:00",
-          "km": 61,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Balaghat",
-              "ev": ""
-            },
-            {
-              "p": "Waraseoni",
-              "ev": ""
-            },
-            {
-              "p": "Dongarmali",
-              "ev": ""
-            },
-            {
-              "p": "Balaghat Local Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-10",
-          "date": "2026-10-10",
-          "from": "09:00",
-          "to": "19:00",
-          "km": 77,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Balaghat",
-              "ev": ""
-            },
-            {
-              "p": "Tirodi",
-              "ev": ""
-            },
-            {
-              "p": "Katangi",
-              "ev": ""
-            },
-            {
-              "p": "Balaghat",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-11",
-          "date": "2026-10-11",
-          "from": "10:30",
-          "to": "18:00",
-          "km": 70,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Balaghat",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-12",
-          "date": "2026-10-12",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 81,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Chhindwara",
-              "ev": ""
-            },
-            {
-              "p": "Shapur Chopna",
-              "ev": ""
-            },
-            {
-              "p": "Amla Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-13",
-          "date": "2026-10-13",
-          "from": "10:00",
-          "to": "19:00",
-          "km": 42,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Bisnoor",
-              "ev": ""
-            },
-            {
-              "p": "Athner",
-              "ev": ""
-            },
-            {
-              "p": "Amla",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-14",
-          "date": "2026-10-14",
-          "from": "07:00",
-          "to": "18:00",
-          "km": 109,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Chicoli",
-              "ev": ""
-            },
-            {
-              "p": "Damjipura",
-              "ev": ""
-            },
-            {
-              "p": "Amla Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-15",
-          "date": "2026-10-15",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Leave",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-16",
-          "date": "2026-10-16",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Leave",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-17",
-          "date": "2026-10-17",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 80,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Multai",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara",
-              "ev": ""
-            },
-            {
-              "p": "Amla",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-18",
-          "date": "2026-10-18",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Sunday",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-19",
-          "date": "2026-10-19",
-          "from": "08:00",
-          "to": "18:00",
-          "km": 119,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Pandhruna",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-20",
-          "date": "2026-10-20",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [],
-          "status": "Holiday",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-21",
-          "date": "2026-10-21",
-          "from": "10:30",
-          "to": "18:00",
-          "km": 45,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Chhindwara",
-              "ev": ""
-            },
-            {
-              "p": "Seoni Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-22",
-          "date": "2026-10-22",
-          "from": "",
-          "to": "",
-          "km": 8,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni Local Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-23",
-          "date": "2026-10-23",
-          "from": "10:00",
-          "to": "18:00",
-          "km": 74,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Chappara",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-24",
-          "date": "2026-10-24",
-          "from": "09:00",
-          "to": "18:00",
-          "km": 46,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Khurai",
-              "ev": ""
-            },
-            {
-              "p": "Keolari",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-25",
-          "date": "2026-10-25",
-          "from": "10:30",
-          "to": "18:00",
-          "km": 44,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara Market",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-26",
-          "date": "2026-10-26",
-          "from": "10:30",
-          "to": "18:00",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": 150,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Chhindwara Market",
-              "ev": ""
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-27",
-          "date": "2026-10-27",
-          "from": "10:30",
-          "to": "18:00",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": 150,
-          "lodg": 600,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni",
-              "ev": ""
-            },
-            {
-              "p": "Balaghat",
-              "ev": "Shilpkaar Sangam"
-            },
-            {
-              "p": "Seoni",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-28",
-          "date": "2026-10-28",
-          "from": "",
-          "to": "",
-          "km": null,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": null,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Seoni Local Market",
-              "ev": "Shilpkaar Sangam"
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-29",
-          "date": "2026-10-29",
-          "from": "",
-          "to": "",
-          "km": 29,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Betul Market",
-              "ev": "Shilpkaar Sangam"
-            },
-            {
-              "p": "Amla",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-30",
-          "date": "2026-10-30",
-          "from": "07:00",
-          "to": "",
-          "km": 111,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Multai",
-              "ev": ""
-            },
-            {
-              "p": "Chhindwara",
-              "ev": "Shilpkaar Sangam"
-            },
-            {
-              "p": "Betul",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        },
-        {
-          "id": "sample-2026-10-31",
-          "date": "2026-10-31",
-          "from": "07:30",
-          "to": "18:00",
-          "km": 106,
-          "rateOv": null,
-          "fareOv": null,
-          "conv": null,
-          "lodg": null,
-          "fws": null,
-          "fwo": 150,
-          "board": null,
-          "mob": null,
-          "places": [
-            {
-              "p": "Amla",
-              "ev": ""
-            },
-            {
-              "p": "Narmadapuram",
-              "ev": "Shilpkaar Sangam"
-            },
-            {
-              "p": "Amla",
-              "ev": ""
-            }
-          ],
-          "status": "Working",
-          "remarks": "",
-          "cf": {}
-        }
-      ]
+     "id": "sample-2026-10-01",
+     "date": "2026-10-01",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 140,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Betul",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-02",
+     "date": "2026-10-02",
+     "from": "09:30",
+     "to": "18:00",
+     "km": 120,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      },
+      {
+       "p": "Seoni",
+       "ev": ""
+      },
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-03",
+     "date": "2026-10-03",
+     "from": "07:00",
+     "to": "19:00",
+     "km": 210,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Itarsi",
+       "ev": ""
+      },
+      {
+       "p": "Narmadapuram",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-04",
+     "date": "2026-10-04",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Sunday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-05",
+     "date": "2026-10-05",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 90,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Narmadapuram",
+       "ev": ""
+      },
+      {
+       "p": "Itarsi",
+       "ev": "Review Meeting"
+      },
+      {
+       "p": "Narmadapuram",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-06",
+     "date": "2026-10-06",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Holiday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-07",
+     "date": "2026-10-07",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 130,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Narmadapuram",
+       "ev": ""
+      },
+      {
+       "p": "Itarsi",
+       "ev": ""
+      },
+      {
+       "p": "Betul",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-08",
+     "date": "2026-10-08",
+     "from": "09:00",
+     "to": "17:30",
+     "km": 85,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Betul",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-09",
+     "date": "2026-10-09",
+     "from": "10:00",
+     "to": "19:00",
+     "km": 160,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Bhopal",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-10",
+     "date": "2026-10-10",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Leave",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-11",
+     "date": "2026-10-11",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Sunday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-12",
+     "date": "2026-10-12",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 90,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Bhopal",
+       "ev": ""
+      },
+      {
+       "p": "Sanchi",
+       "ev": "Training Camp"
+      },
+      {
+       "p": "Bhopal",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-13",
+     "date": "2026-10-13",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 200,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Bhopal",
+       "ev": ""
+      },
+      {
+       "p": "Itarsi",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-14",
+     "date": "2026-10-14",
+     "from": "10:00",
+     "to": "18:30",
+     "km": 75,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Betul",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-15",
+     "date": "2026-10-15",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 140,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-16",
+     "date": "2026-10-16",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Leave",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-17",
+     "date": "2026-10-17",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 125,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      },
+      {
+       "p": "Seoni",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-18",
+     "date": "2026-10-18",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Sunday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-19",
+     "date": "2026-10-19",
+     "from": "08:30",
+     "to": "18:00",
+     "km": 150,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Seoni",
+       "ev": ""
+      },
+      {
+       "p": "Balaghat",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-20",
+     "date": "2026-10-20",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 110,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Balaghat",
+       "ev": ""
+      },
+      {
+       "p": "Seoni",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-21",
+     "date": "2026-10-21",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Holiday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-22",
+     "date": "2026-10-22",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 100,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Seoni",
+       "ev": ""
+      },
+      {
+       "p": "Jabalpur",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-23",
+     "date": "2026-10-23",
+     "from": "10:00",
+     "to": "18:00",
+     "km": 130,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Jabalpur",
+       "ev": ""
+      },
+      {
+       "p": "Seoni",
+       "ev": ""
+      },
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-24",
+     "date": "2026-10-24",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 100,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Chhindwara",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-25",
+     "date": "2026-10-25",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Sunday",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-26",
+     "date": "2026-10-26",
+     "from": "10:30",
+     "to": "18:00",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": 260,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Betul",
+       "ev": ""
+      },
+      {
+       "p": "Itarsi",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-27",
+     "date": "2026-10-27",
+     "from": "",
+     "to": "",
+     "km": null,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": null,
+     "board": null,
+     "mob": null,
+     "places": [],
+     "status": "Leave",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-28",
+     "date": "2026-10-28",
+     "from": "08:00",
+     "to": "20:00",
+     "km": 200,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": 1000,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Indore",
+       "ev": "Review Meeting"
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-29",
+     "date": "2026-10-29",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 200,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Indore",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-30",
+     "date": "2026-10-30",
+     "from": "09:00",
+     "to": "18:00",
+     "km": 85,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Amla",
+       "ev": ""
+      },
+      {
+       "p": "Betul",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
+    },
+    {
+     "id": "sample-2026-10-31",
+     "date": "2026-10-31",
+     "from": "09:30",
+     "to": "17:00",
+     "km": 40,
+     "rateOv": null,
+     "fareOv": null,
+     "conv": null,
+     "lodg": null,
+     "fws": null,
+     "fwo": 150,
+     "board": null,
+     "mob": null,
+     "places": [
+      {
+       "p": "Betul",
+       "ev": ""
+      },
+      {
+       "p": "Amla",
+       "ev": ""
+      }
+     ],
+     "status": "Working",
+     "remarks": "",
+     "cf": {}
     }
-  ]
+   ]
+  }
+ ]
 }
