@@ -113,7 +113,7 @@ const SAMPLE_WORK=`09:00|18:00|140|||150|Amla>Betul>Amla
 09:00|18:00|130|||150|Narmadapuram>Itarsi>Betul
 09:00|17:30|85|||150|Betul>Amla
 10:00|19:00|160||1000|150|Amla>Bhopal
-09:00|18:00|90||1000|150|Bhopal>Sanchi (Training Camp)>Bhopal
+09:00|18:00|90||1000|150|Bhopal>Sanchi (Shilpkaar Shangam)>Bhopal
 09:00|18:00|200|||150|Bhopal>Itarsi>Amla
 10:00|18:30|75|||150|Amla>Betul
 09:00|18:00|140|||150|Amla>Chhindwara>Amla
@@ -133,7 +133,7 @@ const sampleB=(now=new Date())=>{let y=now.getFullYear(),m=now.getMonth();if(m==
  const W=SAMPLE_WORK.split('\n'),Z=['Holiday','Leave','Leave','Holiday','Leave'],slots=dates.filter(d=>!sun(d)),zc=Math.max(0,slots.length-W.length),zi=new Set(Array.from({length:zc},(_,k)=>Math.round((k+1)*slots.length/(zc+1))-1)),n=v=>v===''||v==null?null:+v;
  const E=(d,f,t,km,cv,lg,fo,st,pl)=>({id:'sample-'+d,date:d,from:f,to:t,km,rateOv:null,fareOv:null,conv:cv,lodg:lg,fws:null,fwo:fo,board:null,mob:null,places:pl?pl.split('>').map(x=>{const q=/^(.*?)\s*\((.*)\)$/.exec(x.trim());return q?{p:q[1],ev:q[2]}:{p:x.trim(),ev:''}}):[],status:st,remarks:'',cf:{}});
  let wi=0,zk=0,si=0;const es=dates.map(d=>{if(sun(d))return E(d,'','',null,null,null,null,'Sunday','');const i=si++;if(zi.has(i))return E(d,'','',null,null,null,null,Z[zk++%Z.length],'');const[f,t,km,cv,lg,fo,pl]=W[wi++].split('|');return E(d,f,t,n(km),n(cv),n(lg),n(fo),'Working',pl)});
- const s=defS();Object.assign(s.profile,{code:'ABC@Y9014',name:'PRANAY DEEP',dept:'RETAIL SERVICE',email:'dummy@gmail.com',loc:'BETUL',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. PDP'});s.places=[...new Set([...s.places,...es.flatMap(e=>e.places.map(x=>x.p))])];s.events=['Review Meeting','Training Camp'];
+ const s=defS();Object.assign(s.profile,{code:'ABC@Y9014',name:'PRANAY DEEP',dept:'RETAIL SERVICE',email:'dummy@gmail.com',loc:'BETUL',depot:'NARMADAPURAM',region:'MAHAKAUSHAL',approver:'MR. PDP'});s.places=[...new Set([...s.places,...es.flatMap(e=>e.places.map(x=>x.p))])];s.events=['Shilpkaar Sangam','Review Meeting','Training Camp'];
  return{app:'tada-claim',schema:2,created:now.toISOString(),sample:true,settings:s,claims:[{id,year:y,month:m,created:now.toISOString(),entries:es}]}};
 </script>
 <script>
